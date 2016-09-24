@@ -35,7 +35,7 @@ module SnipmateToYas
 
     def write_aliases_links
       @snippets.mode.aliases.each do |mode_alias|
-        File.symlink(
+        File.ln_sf(
           "#{@snippets.mode.emacs_name}-mode",
           File.join(@base_directory, "#{mode_alias}-mode")
         )
